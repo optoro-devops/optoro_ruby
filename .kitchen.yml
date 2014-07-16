@@ -1,0 +1,30 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_zero
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    run_list: "recipe[optoro_ruby]"
+    attributes:
+      optoro_ruby:
+        ruby_major_version: 2.1
+        ruby_minor_version: 2
+  - name: build_package
+    run_list: "recipe[optoro_ruby]"
+    attributes:
+      optoro_ruby:
+        install_method: build_package
+        ruby_major_version: 2.1
+        ruby_minor_version: 2
+  - name: install_package
+    run_list: "recipe[optoro_ruby]"
+    attributes:
+      optoro_ruby:
+        install_method: install_package
+        ruby_major_version: 2.1
+        ruby_minor_version: 2

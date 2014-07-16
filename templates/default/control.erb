@@ -1,0 +1,16 @@
+Source: ruby
+Section: ruby
+Priority: optional
+Maintainer: <%= node[:optoro_ruby][:maintainer] %> Jeff Gillis <devops@optoro.com>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, <%= node[:optoro_ruby][:debian_build_dependencies].join(", ") %>
+Standards-Version: 3.9.4
+Homepage: http://ruby-lang.org
+#Vcs-Git: git://git.debian.org/collab-maint/ruby.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/ruby.git;a=summary
+
+Package: ruby
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A dynamic, open source programming language.
+ A dynamic, open source programming language with a focus on simplicity and productivity.
+ It has an elegant syntax that is natural to read and easy to write.
