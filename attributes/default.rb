@@ -22,6 +22,6 @@ default[:optoro_ruby][:debian_build_dependencies] = %w[
 
 default[:optoro_ruby][:maintainer] = "Devops User <devops@optoro.com>"
 
-default[:optoro_ruby][:package_2_1_1_256_sha] = "dfb6657042d85337001b1df4cacb1734668cc7334a7f7d40ef9603462b3942dc"
+default[:optoro_ruby][:package_2_1_2_256_sha] = "dfb6657042d85337001b1df4cacb1734668cc7334a7f7d40ef9603462b3942dc"
 
-default[:optoro_ruby][:s3_download_url] = "https://s3.amazonaws.com/optoro-devops/ruby_packages/ruby_2.1.2-1_amd64.deb"
+default[:optoro_ruby][:s3_download_url] = "https://s3.amazonaws.com/optoro-devops/ruby_packages/ruby_#{node[:optoro_ruby][:ruby_full_version]}-1_amd64.deb"
