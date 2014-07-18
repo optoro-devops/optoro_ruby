@@ -7,11 +7,7 @@
 # All rights reserved - Do Not Redistribute
 
 # Update package index
-execute "update package index" do
-  command "sudo apt-get update"
-  action :run
-end
-
+require_recipe "apt"
 
 # Build from source or create debian package
 if node[:optoro_ruby][:install_method].split("_").first == 'build'
