@@ -14,7 +14,7 @@ end
 # Download package from S3 and verify SHA.
 remote_file package_location do
   source node[:optoro_ruby][:s3_download_url]
-  checksum node[:optoro_ruby][:package_2_1_2_256_sha]
+  checksum node[:optoro_ruby][:package_256_sha]
   action :create_if_missing
 end
 

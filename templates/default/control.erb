@@ -1,7 +1,7 @@
 Source: ruby
 Section: ruby
 Priority: optional
-Maintainer: <%= node[:optoro_ruby][:maintainer] %> Jeff Gillis <devops@optoro.com>
+Maintainer: <%= node[:optoro_ruby][:maintainer] %>
 Build-Depends: debhelper (>= 8.0.0), autotools-dev, <%= node[:optoro_ruby][:debian_build_dependencies].join(", ") %>
 Standards-Version: 3.9.4
 Homepage: http://ruby-lang.org
