@@ -1,7 +1,7 @@
 default[:optoro_ruby][:install_method] = 'build_source'
 default[:optoro_ruby][:ruby_major_version] = '2.1'
 default[:optoro_ruby][:ruby_minor_version] = '2'
-default[:optoro_ruby][:ruby_full_version] = "%{major}.%{minor}" % { major: node[:optoro_ruby][:ruby_major_version], minor: node[:optoro_ruby][:ruby_minor_version] }
+default[:optoro_ruby][:ruby_full_version] = "%{major}.%{minor}"
 default[:optoro_ruby][:source_name] = "ruby-%{full_version}.tar.gz" % { full_version: node[:optoro_ruby][:ruby_full_version] }
 default[:optoro_ruby][:source_directory] = "/tmp/ruby-%{full_version}" % { full_version: node[:optoro_ruby][:ruby_full_version] }
 
