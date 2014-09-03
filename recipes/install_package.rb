@@ -2,7 +2,8 @@
 # Description: Installs ruby from pre-built package.
 
 #package_location = "/tmp/ruby_2.1.2-1_amd64.deb"
-package_location = "/tmp/ruby_#{node[:optoro_ruby][:ruby_full_version]}-1_amd64.deb"
+package_location = "/tmp/ruby_%{ruby_full_version}-1_amd64.deb" % { ruby_full_version: node[:optoro_ruby][:ruby_full_version] }
+package = "ruby-%{ruby_full_version}" % { ruby_full_version: node[:optoro_ruby][:ruby_full_version] }
 
 # Install ruby dependencies
 node[:optoro_ruby][:source_dependencies].each do |dep|
@@ -12,18 +13,13 @@ node[:optoro_ruby][:source_dependencies].each do |dep|
 end
 
 # Download package from S3 and verify SHA.
-remote_file package_location do
+remote_file package_location  do
   source node[:optoro_ruby][:s3_download_url]
   checksum node[:optoro_ruby][:package_256_sha]
   action :create_if_missing
 end
 
-# Install package
-#execute "install_package" do
-#  command "dpkg -i #{package_location}"
-#  action :nothing
-#end
-dpkg_package "ruby-#{node[:optoro_ruby][:ruby_full_version]}" do
+dpkg_package package do
   source package_location
   action :install
 end
