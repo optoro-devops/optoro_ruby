@@ -1,1 +1,22 @@
-{"name":"optoro_ruby","description":"Installs/Configures optoro_ruby","long_description":"Installs/Configures optoro_ruby","maintainer":"Jeff Gillis","maintainer_email":"jgillis@optoro.com","license":"All rights reserved","platforms":{},"dependencies":{"apt":">= 0.0.0","build-essential":">= 0.0.0"},"recommendations":{},"suggestions":{},"conflicting":{},"providing":{},"replacing":{},"attributes":{},"groupings":{},"recipes":{},"version":"0.1.4"}
+{
+   "recipes" : {},
+   "long_description" : "Installs/Configures optoro_ruby",
+   "attributes" : {},
+   "description" : "Installs/Configures optoro_ruby",
+   "dependencies" : {
+      "apt" : ">= 0.0.0",
+      "build-essential" : ">= 0.0.0"
+   },
+   "suggestions" : {},
+   "conflicting" : {},
+   "groupings" : {},
+   "recommendations" : {},
+   "maintainer_email" : "jgillis@optoro.com",
+   "replacing" : {},
+   "license" : "All rights reserved",
+   "providing" : {},
+   "version" : "0.1.5",
+   "name" : "optoro_ruby",
+   "platforms" : {},
+   "maintainer" : "Jeff Gillis"
+}
