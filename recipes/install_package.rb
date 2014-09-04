@@ -1,9 +1,13 @@
 # Recipe: install_package
 # Description: Installs ruby from pre-built package.
 
-full_version = node['optoro_ruby']['ruby_full_version'] % { major: node[:optoro_ruby][:ruby_major_version], minor: node[:optoro_ruby][:ruby_minor_version]  }
-package_location = "/tmp/ruby_#{full_version}"
-package = "ruby-#{full_version}"
+major_version = node[:optoro_ruby][:ruby_major_version]
+minor_version = node[:optoro_ruby][:ruby_minor_version]
+params = { major: major_version, minor: minor_version }
+full_version = node[:optoro_ruby][:ruby_full_version] % params
+download_url = node[:optoro_ruby][:s3_download_url] % params
+package_location = "/tmp/ruby_%{full_version}" % { full_version: full_version }
+package = "ruby-%{full_version}" % { full_version: full_version }
 
 # Install ruby dependencies
 node[:optoro_ruby][:source_dependencies].each do |dep|
@@ -14,7 +18,7 @@ end
 
 # Download package from S3 and verify SHA.
 remote_file package_location do
-  source node[:optoro_ruby][:s3_download_url]
+  source download_url
   checksum node[:optoro_ruby][:package_256_sha]
   action :create_if_missing
 end

@@ -11,8 +11,17 @@ node[:optoro_ruby][:source_dependencies].each do |pkg|
 end
 
 # Download ruby from URL
-remote_file "/tmp/#{node[:optoro_ruby][:source_name]}" do
-  source node[:optoro_ruby][:download_url]
+major_version = node[:optoro_ruby][:ruby_major_version]
+minor_version = node[:optoro_ruby][:ruby_minor_version]
+full_version = "%{major}.%{minor}" % { major: major_version, minor: minor_version }
+source_name = "ruby-%{full_version}.tar.gz" % { full_version: full_version }
+tar_command = "tar zxf %{source_name}" % { source_name: source_name }
+#download_params = { major_version: major_version, source_name: source_name }
+download_url = node[:optoro_ruby][:download_url] % { major: major_version, minor: minor_version }
+path = "/tmp/%{source_name}" % { source_name: source_name }
+
+remote_file path do
+  source download_url
   checksum node[:optoro_ruby][:source_sha256_sum]
   notifies :run, "execute[extract_ruby]", :immediately
   action :create_if_missing
@@ -20,7 +29,7 @@ end
 
 # Extract ruby
 execute "extract_ruby" do
-  command "tar zxf #{node[:optoro_ruby][:source_name]}"
+  command tar_command
   cwd "/tmp"
   action :nothing
   not_if { Dir.exist?(node[:optoro_ruby][:source_directory]) }

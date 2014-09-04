@@ -10,25 +10,38 @@ node[:optoro_ruby][:debian_build_dependencies].each do |dep|
 end
 
 # Create correct ruby directory structures
+major_version = node[:optoro_ruby][:ruby_major_version]
+minor_version = node[:optoro_ruby][:ruby_minor_version]
+params = { major: major_version, minor: minor_version }
+full_version = "%{major}.%{minor}" % params
+package_command = "yes | dh_make -f ../ruby-%{major}.%{minor}.tar.gz -s" % params
+source_directory = "/tmp/ruby-%{major}.%{minor}" % params
+
 execute "debianize_ruby_source" do
-  command "yes | dh_make -f ../ruby-#{node[:optoro_ruby][:ruby_full_version]}.tar.gz -s"
-  cwd node[:optoro_ruby][:source_directory]
+  command package_command
+  cwd source_directory
   action :run
-  not_if { Dir.exist?("#{node[:optoro_ruby][:source_directory]}/debian") }
+  not_if { Dir.exist?("#{source_directory}/debian") }
 end
 
 # Install debian related templates (control files, etc)
-%w{ control changelog copyright }.each do |file|
-  template "#{node[:optoro_ruby][:source_directory]}/debian/#{file}" do
+%w{ control copyright }.each do |file|
+  template "#{source_directory}/debian/#{file}" do
     source "#{file}.erb"
     action :create
   end
 end
 
+template "#{source_directory}/debian/changelog" do
+  source "changelog.erb"
+  action :create
+  variables(version: full_version)
+end
+
 # build Debian package
 execute "build_package" do
   command "dpkg-buildpackage"
-  cwd node[:optoro_ruby][:source_directory]
+  cwd source_directory
   action :run
 end
 

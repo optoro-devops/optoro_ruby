@@ -22,8 +22,8 @@ suites:
     attributes:
       optoro_ruby:
         install_method: build_package
-        ruby_major_version: 2.1
-        ruby_minor_version: 2
+        ruby_major_version: 2.0
+        ruby_minor_version: 0-p481
   - name: install_package
     run_list: "recipe[optoro_ruby]"
     attributes:
