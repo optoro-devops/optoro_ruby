@@ -15,6 +15,7 @@ default[:optoro_ruby][:source_dependencies] = %w[
   zlib1g-dev libssl-dev libreadline-dev
   libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev
   libcurl4-openssl-dev
+  libmysqlclient-dev
 ]
 
 default[:optoro_ruby][:debian_build_dependencies] = %w[
