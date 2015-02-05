@@ -1,6 +1,4 @@
-source "https://api.berkshelf.com"
-
-cookbook "apt"
-cookbook "build-essential"
-
+source 'http://berks-api.optoro.io'
+cookbook 'apt'
+cookbook 'build-essential'
 metadata

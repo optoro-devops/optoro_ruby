@@ -1,8 +1,8 @@
 # Recipe: bundler
 # Description: Install bundler
 
-execute "install_bundler" do
-  command "gem install bundler"
-  not_if { File.exist?("/usr/bin/bundler") || File.exist?("/usr/local/bin/bundler") }
+execute 'install_bundler' do
+  command 'gem install bundler'
+  not_if { File.exist?('/usr/bin/bundler') || File.exist?('/usr/local/bin/bundler') }
   action :run
 end

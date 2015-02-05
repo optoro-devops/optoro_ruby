@@ -7,11 +7,11 @@
 # All rights reserved - Do Not Redistribute
 
 # Update package index
-include_recipe "apt"
+include_recipe 'apt'
 
 # Build from source or create debian package
-if node[:optoro_ruby][:install_method].split("_").first == 'build'
-  include_recipe "optoro_ruby::build"
-elsif node[:optoro_ruby][:install_method] == 'install_package'
-  include_recipe "optoro_ruby::install_package"
+if node['optoro_ruby']['install_method'].split('_').first == 'build'
+  include_recipe 'optoro_ruby::build'
+elsif node['optoro_ruby']['install_method'] == 'install_package'
+  include_recipe 'optoro_ruby::install_package'
 end

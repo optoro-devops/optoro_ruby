@@ -1,24 +1,16 @@
 # Serverspec tests for rabbitmq sensu configuration
-require 'serverspec'
+require 'spec_helper'
 
-include Serverspec::Helper::Exec
-include Serverspec::Helper::DetectOS
-RSpec.configure do |c|
-  c.before :all do
-    c.path = '/sbin:/usr/sbin'
-  end
-end
-
-describe "Ruby executeables" do
-  it "ruby should be installed" do
-    expect(command("which ruby")).to return_stdout("/usr/local/bin/ruby")
+describe 'Ruby executeables' do
+  describe command('which ruby') do
+    its(:stdout) { should match('/usr/local/bin/ruby') }
   end
 
-  it "gem should be installed" do
-    expect(command("which gem")).to return_stdout("/usr/local/bin/gem")
+  describe command('which gem') do
+    its(:stdout) { should match('/usr/local/bin/gem') }
   end
 
-  it "bundler should be installed" do
-    expect(command("which bundler")).to return_stdout("/usr/local/bin/bundler")
+  describe command('which bundler') do
+    its(:stdout) { should match('/usr/local/bin/bundler') }
   end
 end

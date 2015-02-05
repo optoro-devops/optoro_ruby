@@ -1,8 +1,8 @@
 Source: ruby
 Section: ruby
 Priority: optional
-Maintainer: <%= node[:optoro_ruby][:maintainer] %>
-Build-Depends: debhelper (>= 8.0.0), autotools-dev, <%= node[:optoro_ruby][:debian_build_dependencies].join(", ") %>
+Maintainer: <%= node['optoro_ruby']['maintainer'] %>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, <%= node['optoro_ruby']['debian_build_dependencies'].join(", ") %>
 Standards-Version: 3.9.4
 Homepage: http://ruby-lang.org
 #Vcs-Git: git://git.debian.org/collab-maint/ruby.git
