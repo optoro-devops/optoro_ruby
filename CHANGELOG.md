@@ -1,9 +1,24 @@
-# 0.1.0
+# 1.0.2
 
-Initial release of optoro_ruby
+Update CHANGELOG.md
 
 * Enhancements
-  * an enhancement
+  * Add entries to changelog.
+
+# 1.0.1
+
+Update README.md
 
 * Bug Fixes
-  * a bug fix
+  * Correct syntax.
+
+# 1.0.0
+
+Initial release of optoro\_ruby for the chef pipeline
+
+* Enhancements
+  * Make sure all rubocop tests pass.
+  * Make all foodcritic tests pass.
+
+* Bug Fixes
+  * Update serverspec tests to pass.
