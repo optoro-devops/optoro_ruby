@@ -5,12 +5,15 @@ Update CHANGELOG.md
 * Enhancements
   * Add entries to changelog.
 
+* Bug Fixes
+  * Fix syntax in README.md
+
 # 1.0.1
 
-Update README.md
+Add RVM recipe
 
-* Bug Fixes
-  * Correct syntax.
+* Enhancements
+  * Now able to use rvm system-wide.
 
 # 1.0.0
 
