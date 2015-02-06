@@ -14,4 +14,6 @@ if node['optoro_ruby']['install_method'].split('_').first == 'build'
   include_recipe 'optoro_ruby::build'
 elsif node['optoro_ruby']['install_method'] == 'install_package'
   include_recipe 'optoro_ruby::install_package'
+elsif node['optoro_ruby']['install_method'] == 'rvm'
+  include_recipe 'optoro_ruby::rvm'
 end
