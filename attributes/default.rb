@@ -30,3 +30,10 @@ default['optoro_ruby']['package_256_sha'] = 'dfb6657042d85337001b1df4cacb1734668
 
 s3_url = format('https://s3.amazonaws.com/optoro-devops/ruby_packages/ruby_%{full_version}-1_amd64.deb', full_version: node['optoro_ruby']['ruby_full_version'])
 default['optoro_ruby']['s3_download_url'] = s3_url
+
+default['rvm']['global_gems'] = [
+  { 'name' => 'bundler' },
+  { 'name' => 'rake' }
+]
+
+default['rvm']['default_ruby'] = 'ruby-2.0.0-p451'
