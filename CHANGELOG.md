@@ -1,9 +1,27 @@
-# 0.1.0
+# 1.0.2
 
-Initial release of optoro_ruby
+Update CHANGELOG.md
 
 * Enhancements
-  * an enhancement
+  * Add entries to changelog.
 
 * Bug Fixes
-  * a bug fix
+  * Fix syntax in README.md
+
+# 1.0.1
+
+Add RVM recipe
+
+* Enhancements
+  * Now able to use rvm system-wide.
+
+# 1.0.0
+
+Initial release of optoro\_ruby for the chef pipeline
+
+* Enhancements
+  * Make sure all rubocop tests pass.
+  * Make all foodcritic tests pass.
+
+* Bug Fixes
+  * Update serverspec tests to pass.
