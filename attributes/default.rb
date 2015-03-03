@@ -36,4 +36,4 @@ default['rvm']['global_gems'] = [
   { 'name' => 'rake' }
 ]
 
-default['rvm']['default_ruby'] = 'ruby-2.0.0-p451'
+default['rvm']['default_ruby'] = 'ruby-2.0.0-p598'
