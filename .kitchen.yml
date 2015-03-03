@@ -51,3 +51,12 @@ suites:
           - name:
               rake
         default_ruby: ruby-2.1.5
+  - name: install_binary_ruby
+    run_list:
+      - recipe[apt]
+      - recipe[optoro_ruby::rvm_install_binary_ruby]
+    data_bags_path: 'test/data_bags'
+    encrypted_data_bag_secret_key_path: 'test/integration/encrypted_data_bag_secret'
+    attributes:
+      optoro_ruby:
+        default_binary_ruby: ruby-2.0.0-p598

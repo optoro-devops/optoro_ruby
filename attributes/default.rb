@@ -37,3 +37,4 @@ default['rvm']['global_gems'] = [
 ]
 
 default['rvm']['default_ruby'] = 'ruby-2.0.0-p451'
+default['optoro_ruby']['default_binary_ruby'] = 'ruby-2.0.0-p598'
