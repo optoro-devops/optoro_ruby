@@ -5,7 +5,6 @@ bash 'install default ruby' do
   flags '--login'
 end
 
-
 %w( bundler rake ).each do |gem|
   gem_package gem do
     action :install
