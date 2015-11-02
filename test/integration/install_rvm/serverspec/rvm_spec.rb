@@ -13,7 +13,7 @@ describe 'Ruby executeables' do
     it { should be_file }
   end
 
-  describe file('/usr/local/rvm/gems/ruby-2.1.5@global/bin/rake') do
+  describe file('/usr/local/rvm/rubies/ruby-2.1.5/bin/rake') do
     it { should be_file }
   end
 
