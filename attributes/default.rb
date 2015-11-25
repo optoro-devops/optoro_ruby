@@ -9,7 +9,12 @@ download_params = { major_version: node['optoro_ruby']['ruby_major_version'], so
 download_url = format('http://cache.ruby-lang.org/pub/ruby/%{major_version}/%{source_name}', download_params)
 default['optoro_ruby']['download_url'] = download_url
 
-default['optoro_ruby']['source_sha256_sum'] = 'f22a6447811a81f3c808d1c2a5ce3b5f5f0955c68c9a749182feb425589e6635'
+# checksum type changed in chef12
+if system('chef-client -v | sed "s/Chef: //g" | cut -c 2 | grep 11') # ~FC048
+  default['optoro_ruby']['source_sha256_sum'] = 'f22a6447811a81f3c808d1c2a5ce3b5f5f0955c68c9a749182feb425589e6635'
+else
+  default['optoro_ruby']['source_sha256_sum'] = '00dd3d72435eb77f2bd94537c1738e5219ca42b6d68df3d4f20c183f4bd12d0f'
+end
 
 default['optoro_ruby']['source_dependencies'] = %w(
   zlib1g-dev libssl-dev libreadline-dev
