@@ -21,6 +21,7 @@ suites:
       optoro_ruby:
         ruby_major_version: 2.1
         ruby_minor_version: 2
+        source_sha256_sum: f22a6447811a81f3c808d1c2a5ce3b5f5f0955c68c9a749182feb425589e6635
   - name: build_package
     run_list: "recipe[optoro_ruby]"
     attributes:
