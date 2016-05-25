@@ -26,5 +26,7 @@ end
 
 package "ruby#{node['optoro_ruby']['ruby_major_version']}"
 
+package "ruby#{node['optoro_ruby']['ruby_major_version']}-dev"
+
 # Install bundler
 include_recipe 'optoro_ruby::_bundler'
