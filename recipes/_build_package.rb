@@ -2,6 +2,9 @@
 # Description: This recipe will build a (good enough) ruby debian package for
 # the specified version of ruby.
 
+# Install prerequisites
+include_recipe 'optoro_ruby::_build'
+
 # Install packages for building a debian file.
 node['optoro_ruby']['debian_build_dependencies'].each do |dep|
   package dep do

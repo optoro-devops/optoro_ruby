@@ -29,4 +29,4 @@ dpkg_package package do
 end
 
 # Install bundler
-include_recipe 'optoro_ruby::bundler'
+include_recipe 'optoro_ruby::_bundler'

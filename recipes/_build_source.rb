@@ -1,6 +1,9 @@
 # Recipe: source
 # Description: Install ruby from source
 
+# Install prerequisites
+include_recipe 'optoro_ruby::_build'
+
 # Compile and install ruby
 major_version = node['optoro_ruby']['ruby_major_version']
 minor_version = node['optoro_ruby']['ruby_minor_version']
@@ -16,4 +19,4 @@ execute 'install_ruby' do
 end
 
 # Install bundler
-include_recipe 'optoro_ruby::bundler'
+include_recipe 'optoro_ruby::_bundler'
