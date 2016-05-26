@@ -16,5 +16,4 @@ describe 'Ruby executeables' do
   describe file('/usr/local/rvm/rubies/ruby-2.1.5/bin/rake') do
     it { should be_file }
   end
-
 end

@@ -33,7 +33,3 @@ execute 'extract_ruby' do
   action :nothing
   not_if { Dir.exist?(node['optoro_ruby']['source_directory']) }
 end
-
-# Install from source or build package from source
-# Install methods: build_source, build_package
-include_recipe "optoro_ruby::#{node['optoro_ruby']['install_method']}"

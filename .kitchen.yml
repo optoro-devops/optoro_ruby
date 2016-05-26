@@ -29,6 +29,14 @@ suites:
         install_method: build_package
         ruby_major_version: 2.0
         ruby_minor_version: 0-p481
+  - name: install_repo
+    run_list: recipe[optoro_ruby]
+    data_bags_path: test/data_bags
+    encrypted_data_bag_secret_key_path: test/integration/encrypted_data_bag_secret
+    attributes:
+      optoro_ruby:
+        install_method: install_repo
+        ruby_major_version: 2.1
   - name: install_package
     run_list: "recipe[optoro_ruby]"
     data_bags_path: 'test/data_bags'
