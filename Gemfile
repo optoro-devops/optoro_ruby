@@ -4,9 +4,9 @@ gem 'berkshelf', '~> 4.0.1'
 
 group :integration do
   gem 'test-kitchen', '~> 1.4.0'
-  gem 'kitchen-ec2', '~> 0.10.0'
+  gem 'kitchen-ec2', '~> 1.0.0'
   gem 'kitchen-docker', '~> 2.3.0'
-  gem 'kitchen-vagrant', '~> 0.19.0'
+  gem 'kitchen-vagrant', '~> 0.20.0'
   gem 'kitchen-joyent', '~> 0.2.2'
 end
 
@@ -21,7 +21,7 @@ group :development do
   gem 'guard-foodcritic'
   gem 'guard-bundler'
   gem 'chef-zero', '~> 4.4.0'
-  gem 'foodcritic', '~> 5.0.0'
+  gem 'foodcritic', '~> 6.0.0'
   gem 'foodcritic-rules-optoro'
   gem 'chefspec', '~> 4.5.0'
   gem 'rspec', '~> 3.4.0'
