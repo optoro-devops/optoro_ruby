@@ -6,7 +6,7 @@ description 'This cookbook installs ruby'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 source_url 'https://github.com/optoro-devops/optoro_ruby'
 issues_url 'https://github.com/optoro-devops/optoro_ruby/issues'
-version '1.1.1'
+version '1.1.2'
 
 depends 'apt'
 depends 'build-essential'
